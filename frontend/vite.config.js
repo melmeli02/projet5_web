@@ -8,7 +8,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://backend:5000',
+        target: 'http://backend:5000', // port interne Docker, pas le port exposé
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
